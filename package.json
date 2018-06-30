@@ -1,5 +1,5 @@
 {
-  "name": "rest-api-apiresponse",
+  "name": "rest-api-response",
   "version": "0.7.5",
   "description": "nodejs api response",
   "main": "index.js",
