@@ -20,7 +20,7 @@ usage:
 to return success:
 ```
 const
-    {APIResponse} = require('./apiresponse');
+    {APIResponse} = require('./rest-api-apiresponse');
 
 router.get('/test', (req,res)=>{
     new APIResponse(res).success({ ok: true });
@@ -43,7 +43,7 @@ results in:
 to return not found,unauthorized or forbidden:
 ```
 const
-    {APIResponse} = require('./apiresponse');
+    {APIResponse} = require('./rest-api-apiresponse');
 
 router.get('/test', (req,res)=>{
     new APIResponse(res).notFound("Error Message");
@@ -70,7 +70,7 @@ results in
 To return validation errors:
 ```
 const
-    {APIResponse} = require('./apiresponse');
+    {APIResponse} = require('./rest-api-apiresponse');
 
 router.get('/test', (req,res)=>{
     new APIResponse(res).invalid("Custom Invalid Message");
@@ -96,7 +96,7 @@ success: false
 To return a custom response:
 ```
 const
-    {APIResponse, Response} = require('./apiresponse');
+    {APIResponse, Response} = require('./rest-api-apiresponse');
 
 router.get('/test', (req,res)=>{
     const response = new Response({ok:true});
@@ -111,7 +111,7 @@ will set the `Test-Header`.
 To add custom fields to response simply extend the ``Response`` object
 ```
 const
-    {APIResponse, Response} = require('./apiresponse');
+    {APIResponse, Response} = require('./rest-api-apiresponse');
 
 class CustomResponse extends Response{
     constructor(data){
