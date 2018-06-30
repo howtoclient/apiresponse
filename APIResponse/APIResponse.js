@@ -52,10 +52,6 @@ class APIResponse {
         const response = new APIError(error);
         this.applySettings(response, 500).send();
     }
-
-    redirect(url, permanent) { //301-302
-
-    }
 }
 
 
