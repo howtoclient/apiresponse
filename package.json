@@ -1,0 +1,19 @@
+{
+  "name": "apiresponse",
+  "version": "0.7.0",
+  "description": "nodejs api response",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/howtoclient/apiresponse.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/howtoclient/apiresponse/issues"
+  },
+  "homepage": "https://github.com/howtoclient/apiresponse#readme"
+}
