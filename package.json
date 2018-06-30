@@ -1,6 +1,6 @@
 {
   "name": "rest-api-apiresponse",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "nodejs api response",
   "main": "index.js",
   "scripts": {
