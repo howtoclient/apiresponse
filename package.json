@@ -1,6 +1,6 @@
 {
   "name": "rest-api-apiresponse",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "nodejs api response",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/howtoclient/apiresponse.git"
   },
-  "keywords": ["express","rest","api"],
+  "keywords": ["express","rest","api","response"],
   "author": "vladi@howtoclient.com",
   "license": "MIT",
   "bugs": {
