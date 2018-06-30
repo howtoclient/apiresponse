@@ -1,7 +1,7 @@
 {
   "name": "rest-api-response",
-  "version": "0.7.5",
-  "description": "nodejs api response",
+  "version": "0.7.6",
+  "description": "nodejs rest api response",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
