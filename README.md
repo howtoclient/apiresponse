@@ -7,12 +7,12 @@ $ npm install apiresponse --save
 
 if `NODE_ENV` is set to 'dev' it will show the message and error body ( for development ).
 
-``success`` - is response a success or not
-``status`` - Response status code.
-``data`` - response data
-``error`` - error object
-``error - errorId`` - contains Automatically Generated ErrorID
-``error - message`` - Message to the client about the error ( 404,401,500 and 403 will return static message unless in development mode)
+- ``success`` - is response a success or not
+- ``status`` - Response status code.
+- ``data`` - response data
+- ``error`` - error object
+- ``error - errorId`` - contains Automatically Generated ErrorID
+- ``error - message`` - Message to the client about the error ( 404,401,500 and 403 will return static message unless in development mode)
 
 ---
 
