@@ -38,12 +38,12 @@ class APIResponse {
         this.applySettings(response, 404).send();
     }
 
-    forbidden() { //403
+    forbidden(error) { //403
         const response = new APIAccessError(error);
         this.applySettings(response, 403).send();
     }
 
-    unauthorized() { //401
+    unauthorized(error) { //401
         const response = new APIAuthenticationError(error);
         this.applySettings(response, 401).send();
     }
