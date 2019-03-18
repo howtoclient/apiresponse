@@ -16,7 +16,7 @@ class APIAccessError extends APIResponseInterface {
             console.error(error);
             this.setError({
                 errorId: errorId,
-                message: IS_NODE_DEV ? e.message : "Forbidden",
+                message: IS_NODE_DEV ? error.message : "Forbidden",
                 body: IS_NODE_DEV ? error.stack.split('\n') : {}
             });
         } catch (e) {

@@ -16,7 +16,7 @@ class APIError extends APIResponseInterface {
             console.error(error);
             this.setError({
                 errorId: errorId,
-                message: IS_NODE_DEV ? e.message : "Server Error",
+                message: IS_NODE_DEV ? error.message : "Server Error",
                 body: IS_NODE_DEV ? error.stack.split('\n') : {}
             });
         } catch (e) {

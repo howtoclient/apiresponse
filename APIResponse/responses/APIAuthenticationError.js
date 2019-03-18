@@ -16,7 +16,7 @@ class APIAuthenticationError extends APIResponseInterface {
             console.error(error);
             this.setError({
                 errorId: errorId,
-                message: IS_NODE_DEV ? e.message : "Not Authorised",
+                message: IS_NODE_DEV ? error.message : "Not Authorised",
                 body: IS_NODE_DEV ? error.stack.split('\n') : {}
             });
         } catch (e) {
