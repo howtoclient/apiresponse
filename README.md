@@ -102,6 +102,7 @@ router.get('/test', (req,res)=>{
     const response = new Response({ok:true});
     response.set('Test-Header', 'The test worked');
     new APIResponse(res).success(response);
+    return response;
 });
 ```
 will set the `Test-Header`.
