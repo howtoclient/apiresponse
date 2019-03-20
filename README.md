@@ -1,4 +1,4 @@
-# apiresponse
+# Rest API Response interface
 A shorter way to send NodeJs rest-api response.
 
 ```sh
