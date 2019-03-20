@@ -17,6 +17,50 @@ if `NODE_ENV` is set to 'dev' it will show the message and error body ( for deve
 ---
 
 usage:
+To make express async capable and help me along i used this
+```
+const {APIResponse} = require('rest-api-response');
+module.exports = (handler) =>
+    async (req, res, next) => {
+        try {
+            new APIResponse(res).success(
+                await handler(req, next)
+            )
+        } catch (error) {
+            next(error);
+        }
+    };
+```
+This allows me to simply return the response without any hustle.
+example of 404 handler
+```
+const
+    {NotFoundError} = require('./rest-api-apiresponse');
+    
+router.use('/', asyncify(
+    async (req) => {
+        throw new NotFoundError("[" + req.method + "] - " + req.path);
+    }
+));
+```
+example of async handler with response + header
+```
+const
+    asyncify = require('./helpers/asyncify.js'),
+    {Response} = require('./rest-api-apiresponse');
+    
+router.use('/', asyncify(
+    async (req) => {
+        const email = await getUserEmail(req.query);
+        return new Response(
+            { userEmail: email |,
+            { 'test-header': 'i am header' }
+        )
+    }
+));
+```
+
+# Basic DOC
 to return success:
 ```
 const
@@ -101,6 +145,22 @@ const
 router.get('/test', (req,res)=>{
     const response = new Response({ok:true});
     response.set('Test-Header', 'The test worked');
+    new APIResponse(res).success(response);
+    return response;
+});
+```
+
+OR 
+
+```
+const
+    {APIResponse, Response} = require('./rest-api-apiresponse');
+
+router.get('/test', (req,res)=>{
+    const response = new Response(
+        {ok:true},
+        {'Test-Header': 'The test worked'}
+    ); 
     new APIResponse(res).success(response);
     return response;
 });
