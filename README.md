@@ -52,10 +52,11 @@ const
 router.use('/', asyncify(
     async (req) => {
         const email = await getUserEmail(req.query);
-        return new Response(
-            { userEmail: email |,
-            { 'test-header': 'i am header' }
-        )
+        
+        const response = new Response({ userEmail: email });
+        response.set('test-header', 'i am header');
+        
+        return response;
     }
 ));
 ```
@@ -157,12 +158,10 @@ const
     {APIResponse, Response} = require('./rest-api-apiresponse');
 
 router.get('/test', (req,res)=>{
-    const response = new Response(
-        {ok:true},
-        {'Test-Header': 'The test worked'}
-    ); 
-    new APIResponse(res).success(response);
-    return response;
+    const response = new Response({ok:true}); 
+    response.set('Test-Header', 'The test worked');
+    
+    new APIResponse(res).success(response); 
 });
 ```
 will set the `Test-Header`.
