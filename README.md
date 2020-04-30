@@ -2,7 +2,7 @@
 A shorter way to send NodeJs rest-api response.
 
 ```sh
-$ npm install apiresponse --save
+$ npm install rest-api-response --save
 ```
 
 if `NODE_ENV` is set to 'dev' it will show the message and error body ( for development ).
